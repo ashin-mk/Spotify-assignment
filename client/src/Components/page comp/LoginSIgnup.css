@@ -1,0 +1,96 @@
+#Signuppage{
+height: 745px;
+width: 1534px;
+background-color: rgba(38, 27, 69, 0.2);
+}
+#signupBox{
+    position: absolute;
+    top:140px;
+    left:530px;
+    height: 450px;
+    width: 400px;
+    border-radius: 5px;
+    background-color: rgba(97, 9, 9, 0.553);
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.8);
+}
+#signupBox label,#signupBox input{
+    display: block;
+    margin: 20px 115px;
+    text-align: center;
+}
+.formSignup{
+    margin-top: 80px;
+    color: aliceblue;
+    font-size: 20px;
+}
+#submitSignup{
+    position: absolute;
+    top: 355px;
+left:170px;
+background-color:rgb(12, 114, 82);
+border-style: none;
+color: aliceblue;
+padding: 5px;
+border-radius: 5px;
+width: 70px;
+}
+#submitSignup:hover{
+    color: black;
+    background-color: crimson;
+}
+#signupBox p{
+margin:100px 75px;
+}
+
+/* login */
+#Loginpage{
+    height: 745px;
+    width: 1534px;
+    background-color: rgba(38, 27, 69, 0.2);
+    }
+    #LoginBox{
+        position: absolute;
+        top:140px;
+        left:530px;
+        height: 450px;
+        width: 400px;
+        border-radius: 5px;
+        background-color: rgba(97, 9, 9, 0.553);
+        box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.8);
+    }
+    #LoginBox label,#LoginBox input{
+        display: block;
+        margin: 20px 115px;
+        text-align: center;
+    }
+    .formLogin{
+        margin-top: 120px;
+        color: aliceblue;
+        font-size: 20px;
+    }
+    #submitLogin{
+        position: absolute;
+        top: 325px;
+    left:170px;
+    background-color:rgb(12, 114, 82);
+    border-style: none;
+    color: aliceblue;
+    padding: 5px;
+    border-radius: 5px;
+    width: 70px;
+    }
+    #submitLogin:hover{
+        color: black;
+        background-color: crimson;
+    }
+    #LoginBox p{
+    margin: 148px 75px;
+    }
+    #iconsignuplogin{
+        font-size: 40px;
+        color: rgb(9, 48, 35);
+        position: absolute;
+        left:140px;
+        top: -20px;
+font-style: italic;
+    }

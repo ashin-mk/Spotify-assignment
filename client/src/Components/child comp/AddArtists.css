@@ -1,0 +1,56 @@
+#AddArtistscomp{
+    position: fixed;
+    height: 1280px;
+    top: -179px;
+left: -280px;
+    width: 1850px;;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.334);
+}
+#artistBox{
+    position: fixed;
+    top:130px;
+    left:380px;
+    height: 500px;
+    width: 800px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 4px 8px 0px;
+    border-radius: 5px;
+}
+#closeButton{
+    position: fixed;
+    left:1147px;
+    border-style: none;
+    font-size: 35.5px;
+    top: 131px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 5px;
+}
+#closeButton:hover{
+    cursor: pointer;
+}
+#headerAddartists{
+    border-bottom:1px solid rgba(52, 43, 43, 0.477) ;
+    width: 100%;
+    height: 30px;
+    font-size: 10px;
+    font-weight: normal;
+}
+.ArtistFormdata{
+    display: block;
+    margin:30px;
+}
+.ArtistFormdata input{
+    position: absolute;
+    left: 150px;
+    width: 180px;
+}
+.BioArtists{
+   
+    width: 180px;
+    height: 150px;
+position: absolute;
+resize: none;
+left: 150px;
+}

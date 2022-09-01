@@ -1,0 +1,19 @@
+#Sidebar{
+    position: fixed;
+    left:0px;
+    top: 69px;
+    height:100%;
+    width:152px;
+    background-color: cadetblue;
+}
+#Sidebar button{
+    padding: 30px;
+    width: 152px;
+    background-color: cadetblue;
+    border: 0px;
+    font-size: 17px;
+}
+#Sidebar button:hover{
+cursor: pointer;
+background-color: rgb(233, 229, 229);
+}

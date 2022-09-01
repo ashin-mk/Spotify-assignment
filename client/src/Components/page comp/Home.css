@@ -1,0 +1,29 @@
+.TableTop10SOngs{
+    position: absolute;
+    top:150px;
+    left: 165px;
+    z-index: -1;
+}
+.TableTop10SOngs th,.TableTop10SOngs td{
+padding: 5px;
+max-width: 250px;
+min-width: 250px;
+max-lines: 5;
+background-color: aliceblue;
+text-align: center;
+}
+.TableTop10Artists th,.TableTop10Artists td{
+    padding: 5px;
+    width: 250px;
+    background-color: aliceblue;
+    text-align: center;
+    }
+    .TableTop10Artists{
+        position: absolute;
+        top: 800px;;
+        left: 165px;
+        z-index: -1;
+    }
+    #songnametabledata{
+       width: 780px;
+    }

@@ -1,0 +1,31 @@
+#searchbar{
+
+    position: fixed;
+    z-index: 2;
+    left: 300px;
+    top: 15px;
+    height: 45px;
+    width: 250px;
+    background-color: rgb(1, 130, 130);
+    border-radius: 20px;
+  
+}
+#searchbar input{
+    margin-top: 10px;
+    margin-left: 50px;
+    height: 25px;
+    width: 190px;
+    background-color:rgb(1, 130, 130);
+    border-style: none;
+    
+}
+.magnifies{
+    z-index: 3;
+    position: fixed;
+    height: 30px;
+    width: 30px;
+    left: 310px;
+    top: 23px;
+    opacity: .78;
+    border-radius: 10px;
+}
