@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./AddArtists.css"
-imp
+
 const AddArtists = (props) => {
+
+  const [data,setData]=useState({
+Artist:"",
+DOB:"",
+Bio:""
+  })
+  const handleData=()=>{
+
+  }
  
   return (
     <div id='AddArtistscomp'>
@@ -17,15 +26,15 @@ const AddArtists = (props) => {
         <form>
 <div className='ArtistFormdata'>
   <label>Artists</label>
-  <input type="text"></input>
+  <input type="text" onChange={(e)=>{setData({...data,Artist:e.target.value})}}></input>
 </div>
 <div className='ArtistFormdata'>
   <label>Date Of Birth</label>
-  <input type="date"></input>
+  <input type="date" onChange={(e)=>{setData({...data,DOB:e.target.value})}}></input>
 </div>
 <div className='ArtistFormdata'>
   <label>Bio</label>
-  <textarea type="text" className='BioArtists'></textarea>
+  <textarea type="text" className='BioArtists' onChange={(e)=>{setData({...data,Bio:e.target.value})}}></textarea>
 </div>
         </form>
         </div>
