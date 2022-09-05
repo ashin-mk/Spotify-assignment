@@ -20,6 +20,7 @@ axios.post("http://localhost:3001/login",datainput).then((incomingdata)=>{
   navigate("/home")
 }).catch((err)=>{
   console.log(err)
+  alert("some error occured please try again")
 })
 console.log(datainput)
   }
