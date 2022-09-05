@@ -3,7 +3,9 @@ const addArtists=mongoose.Schema({
     Artist:String,
 DOB:String,
 Bio:String,
-Songs:Array
+Songs:Object,
+songlist:[],
+Rate:Number
 })
 const Artists=mongoose.model("artists",addArtists)
 module.exports=Artists

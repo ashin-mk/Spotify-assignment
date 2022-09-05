@@ -1,5 +1,5 @@
 #Header{
-    width: 1538px;
+    width: 100%;
     height: 69px;
     background-color: rgb(17, 109, 109); 
     position: fixed;
@@ -21,8 +21,17 @@
 }
 .Userdetails{
     position: absolute;
+    text-align: center;
     top: 0px;
-    left:1388px;
+    height: 69px;
+    right: 0px;
+   width: 195px;
+   color: aliceblue;
+ background-color: cadetblue;
+
+}
+.Userdetails div{
+    margin: 5px 0px;
 }
 .logsign-box button{
 padding: 24.5px;
@@ -36,4 +45,9 @@ width: 130px;
     background-color: rgb(245, 237, 238);
     cursor: pointer;
     color: black;
+}
+.logoutfn{
+position: relative;
+top:10px;
+text-align: end;
 }

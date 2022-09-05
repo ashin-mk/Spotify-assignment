@@ -39,7 +39,9 @@ const success=await bcrypt.compare(req.body.Password,userdata[0].Password)
 // console.log(success)
 if(success){
    const token= await JWT.sign(userdata[0].Email,process.env.SECRET_KEY)
-   res.status(200).send({authtoken:token})
+   res.status(200).send({authtoken:token,
+username:userdata[0].Name,
+useremail:userdata[0].Email})
 }else{
     res.status(400).send("Invalid Password")
 }

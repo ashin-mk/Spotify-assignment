@@ -18,6 +18,11 @@ font-size: 18px;
 left: 190px;
 width: 140px;
 }
+.input-addsongs select{
+    position: absolute;
+    left: 190px;
+    width: 140px;  
+}
 .input-addsongs label{
     margin-top:-3px ;
 }

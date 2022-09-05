@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./LoginSIgnup.css"
@@ -9,6 +10,11 @@ const Signup = () => {
   })
   const handleInputdata=(e)=>{
 e.preventDefault()
+axios.post("http://localhost:3001/signup",inputData).then((data)=>{
+  console.log(data)
+}).catch((err)=>{
+  console.log(err)
+})
 console.log(inputData)
   }
   return (

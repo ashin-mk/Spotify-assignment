@@ -3,6 +3,7 @@
     top:150px;
     left: 165px;
     z-index: -1;
+    height: auto;
 }
 .TableTop10SOngs th,.TableTop10SOngs td{
 padding: 5px;
@@ -20,10 +21,15 @@ text-align: center;
     }
     .TableTop10Artists{
         position: absolute;
-        top: 800px;;
+        top: 1200px;;
         left: 165px;
         z-index: -1;
+        height: auto;
     }
     #songnametabledata{
        width: 780px;
+    }
+    .imgSongs{
+height: 70px;
+width:70px;
     }

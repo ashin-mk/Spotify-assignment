@@ -1,20 +1,33 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import AddArtists from '../child comp/AddArtists'
 import Header from '../child comp/Header'
 import Sidebar from '../child comp/Sidebar'
 import "./Addsongs.css"
 import FileBase64 from 'react-file-base64'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const Addsongs = () => {
-  const [artists,setArtists]=useState(false)
+  const [artistName,setArtistsName]=useState()
+  const [artists,setArtists]=useState()
+
   const [addsongs,setAddsongs]=useState({
     Song:"",
     Image:null,
     Released:"",
-    Artists:"",
+    Artist:"",
   })
+  const navigate=useNavigate()
+  useEffect(()=>{
+axios.get("http://localhost:3001/home").then((artistdata)=>{
+  setArtistsName(artistdata.data.Artist)
+})
+  },[])
   const handleAddSong=(id,e)=>{
-setAddsongs({...addsongs,[id]:e.target.value})
+    if(e.target.value!==""){
+      setAddsongs({...addsongs,[id]:e.target.value})
+    }
+
 // console.log(addsongs)
   }
   const handleArtists=(e)=>{
@@ -25,9 +38,28 @@ setAddsongs({...addsongs,[id]:e.target.value})
   const closeArtists=()=>{
     setArtists(false)
   }
+  const addNewArtist=(k)=>{
+    artistName.push(k)
+  }
   const handleInputs=(e)=>{
     e.preventDefault()
-    console.log(addsongs)
+    if(addsongs.Artist.length){
+      axios({
+        url:"http://localhost:3001/addsongs",
+        method:'POST',
+        data:addsongs,
+        headers:{
+          authtoken:localStorage.getItem("AuthSpotify")
+        }
+      }).then((data)=>{
+  console.log(data)
+      }).catch((err)=>{
+        console.log(err)
+      })
+    }else{
+      alert("please select an artist")
+    }
+    
   }
   return (
     <div>
@@ -63,16 +95,23 @@ setAddsongs({...addsongs,[id]:e.target.value})
             
             <div className='input-addsongs'>
             <label>Artists</label>
-            <input type="text" onChange={(e)=>{handleAddSong("Artists",e)}}></input>
+            <select type="text"  onChange={(e)=>{handleAddSong("Artist",e)}}>
+              <option value="" disabled selected>Select Artist</option>
+              {artistName && artistName.map((data,i)=>{
+                return(
+                  <option value={data.Artist} key={i}>{data.Artist}</option>
+                )
+              })}
+            </select>
             </div>
             
             <button id='AddartistsButt' onClick={(e)=>{handleArtists(e)}}>+   Add Artists</button>
             <div className='SubmitCancelButt'>
-            <button onClick={()=>{}}>Cancel</button> <button onClick={(e)=>{handleInputs(e)}}>Save</button>
+            <button onClick={()=>{navigate("/")}}>Cancel</button> <button onClick={(e)=>{handleInputs(e)}}>Save</button>
             </div>
           </form>
           {artists===true &&
-          <AddArtists state={closeArtists}/>
+          <AddArtists close={{closeArtists,addNewArtist}}/>
 
           }
           

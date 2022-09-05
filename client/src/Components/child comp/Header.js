@@ -2,8 +2,18 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import "./Header.css"
 const Header = () => {
-    const token=localStorage.getItem("Authorization")
-    localStorage.setItem("Authorization","")
+    const token=localStorage.getItem("AuthSpotify")
+    const name=localStorage.getItem("Namespotify")
+    const email=localStorage.getItem("Emailspotify")
+
+    // localStorage.setItem("Authorization","")
+// console.log(name)
+const handleLogout=()=>{
+    localStorage.setItem("AuthSpotify","")
+    localStorage.setItem("Emailspotify","")
+    localStorage.setItem("Namespotify","")
+window.location.reload(false)
+}
   return (
     <div id='Header'>
         <div className='spotify-logo'>
@@ -27,11 +37,17 @@ const Header = () => {
         {
             token &&
             <div  className='Userdetails'>
-                Name
+            <div >
+               <div> {name}</div>
+               <div>  {email}</div>
+                </div>
+                <div className='logoutfn'>
+<button onClick={()=>{handleLogout()}}>Logout</button>
+                </div>
                 </div>
                
         }
-         {console.log(token)}
+         
     </div>
   )
 }

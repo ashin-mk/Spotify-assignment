@@ -1,15 +1,31 @@
 import React, { useState } from 'react'
 import "./AddArtists.css"
+import axios from "axios"
 
-const AddArtists = (props) => {
+ const AddArtists = (props) => {
 
   const [data,setData]=useState({
 Artist:"",
 DOB:"",
 Bio:""
   })
-  const handleData=()=>{
+  const handleData=(e)=>{
+e.preventDefault()
+//console.log(data)
+axios({
+  method:"POST",
+  url:"http://localhost:3001/addartists",
+  data:data,
+}).then((incdata)=>{
+  console.log("working Fine")
+  console.log(data)
+  props.close.addNewArtist(data)
+  props.close.closeArtists()
 
+})
+.catch((err)=>{
+  console.log(err)
+})
   }
  
   return (
@@ -18,7 +34,7 @@ Bio:""
        
         <header id='headerAddartists'>
           <h1>Add Artists</h1>
-        <button onClick={()=>{props.state()}} id="closeButton">
+        <button onClick={()=>{props.close.closeArtists()}} id="closeButton">
           x
         </button>
         </header>
@@ -26,7 +42,7 @@ Bio:""
         <form>
 <div className='ArtistFormdata'>
   <label>Artists</label>
-  <input type="text" onChange={(e)=>{setData({...data,Artist:e.target.value})}}></input>
+  <input type="text" onChange={(e)=>{setData({...data,Artist:e.target.value.toLowerCase()})}}></input>
 </div>
 <div className='ArtistFormdata'>
   <label>Date Of Birth</label>
@@ -36,6 +52,7 @@ Bio:""
   <label>Bio</label>
   <textarea type="text" className='BioArtists' onChange={(e)=>{setData({...data,Bio:e.target.value})}}></textarea>
 </div>
+<button onClick={(e)=>handleData(e)} style={{position:"absolute",top:"400px",left:"150px"}}>Ok</button>
         </form>
         </div>
       </div>

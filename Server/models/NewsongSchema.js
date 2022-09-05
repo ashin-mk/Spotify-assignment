@@ -4,7 +4,13 @@ const Songschema=mongoose.Schema({
     Image:String,
     Released:String,
     Artist:String,
-    UniqueId:String
+    UniqueId:{
+       type: String,
+       required:true},
+    Rate:Number,
+    Rating:{
+        type:Object,
+        required:true},
 })
 const Songs=mongoose.model("songs",Songschema)
 module.exports=Songs
