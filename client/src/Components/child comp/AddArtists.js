@@ -14,17 +14,17 @@ e.preventDefault()
 //console.log(data)
 axios({
   method:"POST",
-  url:"http://localhost:3001/addartists",
+  url:"https://spotify-server-ashin.herokuapp.com/addartists",
   data:data,
 }).then((incdata)=>{
-  console.log("working Fine")
-  console.log(data)
+  // console.log("working Fine")
+  // console.log(data)
   props.close.addNewArtist(data)
   props.close.closeArtists()
 
 })
 .catch((err)=>{
-  console.log(err)
+alert("some error occured")
 })
   }
  

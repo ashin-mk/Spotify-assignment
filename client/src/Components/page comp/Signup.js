@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import "./LoginSIgnup.css"
 const Signup = () => {
   const [inputData,setInputData]=useState({
@@ -8,14 +8,18 @@ const Signup = () => {
     Email:"",
     Password:""
   })
+  const navigate=useNavigate()
   const handleInputdata=(e)=>{
 e.preventDefault()
-axios.post("http://localhost:3001/signup",inputData).then((data)=>{
-  console.log(data)
+axios.post("https://spotify-server-ashin.herokuapp.com/signup",inputData).then((data)=>{
+  //console.log(data)
+  alert("Successfully loggen in Click ok to login")
+  navigate("/login")
 }).catch((err)=>{
   console.log(err)
+alert("something went wrong please try again")
 })
-console.log(inputData)
+//console.log(inputData)
   }
   return (
     <div id='Signuppage'>

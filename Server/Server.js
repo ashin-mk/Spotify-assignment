@@ -18,7 +18,7 @@ app.listen(process.env.PORT || 3001,(err)=>{
         console.log("Err running server")
     }
 })
-mongoose.connect("mongodb://localhost/spotify",()=>{
+mongoose.connect("mongodb+srv://Ashindeedu:ashin123@ashinmk.rxye7.mongodb.net/Spotify?retryWrites=true&w=majority",()=>{
 console.log("connected to db")
 },()=>{
 console.log("Err connecting to db")

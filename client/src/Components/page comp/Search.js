@@ -20,7 +20,7 @@ const Search = () => {
   setSearch(e.target.value)
  }
   useEffect(()=>{
-axios.get("http://localhost:3001/home").then((resultdata)=>{
+axios.get("https://spotify-server-ashin.herokuapp.com/home").then((resultdata)=>{
  // console.log(resultdata.data.Artist)
 
   setDbdata(resultdata.data)
@@ -39,7 +39,7 @@ const updateRating=(i)=>{
   //console.log(i,"dfghjkl")
 //console.log(rate)
   axios({
-    url:"http://localhost:3001/updaterate",
+    url:"https://spotify-server-ashin.herokuapp.com/updaterate",
     method:"PUT",
     headers:{
       authtoken:localStorage.getItem("AuthSpotify")

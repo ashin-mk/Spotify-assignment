@@ -20,7 +20,7 @@ window.location.reload(false)
             Spotify
         </div>
         {
-            !token.length &&
+            token==="" &&
             <div className='logsign-box'>
         <Link to="/signup">
             <button >

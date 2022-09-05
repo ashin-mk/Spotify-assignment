@@ -11,7 +11,7 @@ const Login = () => {
   })
   const handledatainput=(e)=>{
 e.preventDefault()
-axios.post("http://localhost:3001/login",datainput).then((incomingdata)=>{
+axios.post("https://spotify-server-ashin.herokuapp.com/login",datainput).then((incomingdata)=>{
 
   console.log(incomingdata.data)
   localStorage.setItem("AuthSpotify",incomingdata.data.authtoken)

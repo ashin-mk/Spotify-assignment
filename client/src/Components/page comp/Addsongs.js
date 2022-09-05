@@ -19,7 +19,7 @@ const Addsongs = () => {
   })
   const navigate=useNavigate()
   useEffect(()=>{
-axios.get("http://localhost:3001/home").then((artistdata)=>{
+axios.get("https://spotify-server-ashin.herokuapp.com/home").then((artistdata)=>{
   setArtistsName(artistdata.data.Artist)
 })
   },[])
@@ -45,16 +45,18 @@ axios.get("http://localhost:3001/home").then((artistdata)=>{
     e.preventDefault()
     if(addsongs.Artist.length){
       axios({
-        url:"http://localhost:3001/addsongs",
+        url:"https://spotify-server-ashin.herokuapp.com/addsongs",
         method:'POST',
         data:addsongs,
         headers:{
           authtoken:localStorage.getItem("AuthSpotify")
         }
       }).then((data)=>{
-  console.log(data)
+ // console.log(data)
+navigate("/")
       }).catch((err)=>{
-        console.log(err)
+        // console.log(err)
+        alert("some error occured")
       })
     }else{
       alert("please select an artist")

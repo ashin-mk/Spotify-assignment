@@ -10,7 +10,7 @@ const Songs = () => {
   const token=localStorage.getItem("AuthSpotify")
   let rate=0
     useEffect(()=>{
-        axios.get("http://localhost:3001/home").then((resultdata)=>{
+        axios.get("https://spotify-server-ashin.herokuapp.com/home").then((resultdata)=>{
             setData(resultdata.data.Song)
         })
     },[])
@@ -25,7 +25,7 @@ const Songs = () => {
       }
       const updateRating=(i)=>{
         axios({
-          url:"http://localhost:3001/updaterate",
+          url:"https://spotify-server-ashin.herokuapp.com/updaterate",
           method:"PUT",
           headers:{
             authtoken:localStorage.getItem("AuthSpotify")
@@ -36,6 +36,8 @@ const Songs = () => {
             Rate:rate,
             uniqueid:i.UniqueId
           }
+        }).then(()=>{
+            window.location.reload(false)
         })
       
       }
@@ -44,7 +46,7 @@ const Songs = () => {
         <Header/>
         <Sidebar/>
         <table className='TableTop10SOngs'>
-          <thead style={{fontSize:"30px",fontWeight:'bold'}}>Top 10 Songs</thead>
+          <thead style={{fontSize:"30px",fontWeight:'bold'}}>Songs</thead>
           <tr>
             <th>Artwork</th>
             <th>Song</th>

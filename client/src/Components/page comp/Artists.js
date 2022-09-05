@@ -7,7 +7,7 @@ const Artists = () => {
     const [data,setData]=useState()
     
   useEffect(()=>{
-    axios.get("http://localhost:3001/home").then((resultdata)=>{
+    axios.get("https://spotify-server-ashin.herokuapp.com/home").then((resultdata)=>{
       setData(resultdata.data.Artist)
     console.log(resultdata.data.Artist)}
       )},[])
@@ -16,7 +16,7 @@ const Artists = () => {
         <Header/>
         <Sidebar/>
         <table className='TableTop10Artists' style={{top:"158px"}}>
-          <thead style={{fontSize:"30px",fontWeight:'bold'}}>Top 10 Artists</thead>
+          <thead style={{fontSize:"30px",fontWeight:'bold'}}>Artists</thead>
           <tr>
             <th>Artists</th>
             <th>Date of Birth</th>
