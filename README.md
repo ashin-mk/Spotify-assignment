@@ -6,4 +6,3 @@
 // Both Artist and Song is searched at a time
 // popup will automatically close after successfully adding the artist without reloading the page
 
-//https://spotify-client-ashin.herokuapp.com/
